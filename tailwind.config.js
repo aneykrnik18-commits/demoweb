@@ -5,6 +5,7 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    extend: {
       colors: {
         'primary': '#fdf8f5',
         'warm-cream': '#fefce8',
@@ -45,6 +46,7 @@ export default {
           '50%': { transform: 'translateY(-10px)' },
         }
       }
+    }
   },
   plugins: [],
 }
