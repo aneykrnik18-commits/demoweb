@@ -7,7 +7,7 @@ import GlowButton from '../ui/GlowButton';
 import { CheckCircle } from 'lucide-react';
 import { useForm as useReactHookForm } from 'react-hook-form';
 
-const AppointmentForm = () => {
+const ReservationForm = () => {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [isSuccess, setIsSuccess] = useState(false);
   
@@ -15,7 +15,7 @@ const AppointmentForm = () => {
 
   const onSubmit = async (data) => {
     setIsSubmitting(true);
-    // Simulate API call or EmailJS integration
+    // Simulate API call
     await new Promise(resolve => setTimeout(resolve, 2000));
     console.log(data);
     setIsSubmitting(false);
@@ -26,11 +26,11 @@ const AppointmentForm = () => {
     setTimeout(() => setIsSuccess(false), 5000);
   };
 
-  const inputClasses = "w-full bg-white/5 border border-white/10 rounded-xl px-4 py-3 text-white placeholder:text-gray-500 focus:outline-none focus:border-cyan/50 focus:bg-white/10 transition-colors";
+  const inputClasses = "w-full bg-warm-cream/5 border border-warm-cream/10 rounded-xl px-4 py-3 text-white placeholder:text-warm-cream/50 focus:outline-none focus:border-amber-glow/50 focus:bg-warm-cream/10 transition-colors";
 
   return (
-    <section className="py-24 relative overflow-hidden" id="appointment">
-      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-cyan/5 to-transparent pointer-events-none" />
+    <section className="py-24 relative overflow-hidden" id="reservation">
+      <div className="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-amber-glow/5 to-transparent pointer-events-none" />
       
       <div className="container mx-auto px-4 md:px-8">
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -38,31 +38,31 @@ const AppointmentForm = () => {
           <div className="relative z-10">
             <SectionTitle 
               align="left"
-              subtitle="Book Now" 
-              title="Request an Appointment" 
-              description="Fill out the form below to schedule your consultation. Our team will get back to you within 24 hours to confirm your appointment time."
+              subtitle="Reserve a Table" 
+              title="Book Your Spot" 
+              description="Fill out the form below to secure your table. We accept reservations for parties of up to 10 guests."
             />
             
             <div className="mt-8 space-y-6">
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-cyan/20 flex items-center justify-center text-cyan">1</div>
+                <div className="w-12 h-12 rounded-full bg-amber-glow/20 flex items-center justify-center text-amber-glow font-bold">1</div>
                 <div>
-                  <h4 className="font-bold text-white">Fill the Form</h4>
-                  <p className="text-gray-400 text-sm">Provide your details and preferred time.</p>
+                  <h4 className="font-bold text-white font-serif">Fill the Form</h4>
+                  <p className="text-warm-cream/60 text-sm">Provide your details and preferred time.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-cyan/20 flex items-center justify-center text-cyan">2</div>
+                <div className="w-12 h-12 rounded-full bg-amber-glow/20 flex items-center justify-center text-amber-glow font-bold">2</div>
                 <div>
-                  <h4 className="font-bold text-white">Confirmation</h4>
-                  <p className="text-gray-400 text-sm">We will call or email you to confirm.</p>
+                  <h4 className="font-bold text-white font-serif">Confirmation</h4>
+                  <p className="text-warm-cream/60 text-sm">We will email you to confirm your table.</p>
                 </div>
               </div>
               <div className="flex items-center gap-4">
-                <div className="w-12 h-12 rounded-full bg-cyan/20 flex items-center justify-center text-cyan">3</div>
+                <div className="w-12 h-12 rounded-full bg-amber-glow/20 flex items-center justify-center text-amber-glow font-bold">3</div>
                 <div>
-                  <h4 className="font-bold text-white">Visit Clinic</h4>
-                  <p className="text-gray-400 text-sm">Experience premium dental care.</p>
+                  <h4 className="font-bold text-white font-serif">Visit Us</h4>
+                  <p className="text-warm-cream/60 text-sm">Enjoy great food and cozy vibes.</p>
                 </div>
               </div>
             </div>
@@ -81,17 +81,17 @@ const AppointmentForm = () => {
                     initial={{ opacity: 0 }}
                     animate={{ opacity: 1 }}
                     exit={{ opacity: 0 }}
-                    className="absolute inset-0 z-20 bg-deep-navy/90 backdrop-blur-md flex flex-col items-center justify-center text-center p-8"
+                    className="absolute inset-0 z-20 bg-dark-roast/90 backdrop-blur-md flex flex-col items-center justify-center text-center p-8"
                   >
                     <motion.div 
                       initial={{ scale: 0 }}
                       animate={{ scale: 1 }}
                       transition={{ type: "spring", delay: 0.2 }}
                     >
-                      <CheckCircle className="text-soft-teal w-20 h-20 mb-4" />
+                      <CheckCircle className="text-amber-glow w-20 h-20 mb-4" />
                     </motion.div>
-                    <h3 className="text-2xl font-bold text-white mb-2">Request Sent!</h3>
-                    <p className="text-gray-300">Thank you for requesting an appointment. We will contact you shortly to confirm your booking.</p>
+                    <h3 className="text-2xl font-bold text-white mb-2 font-serif">Reservation Sent!</h3>
+                    <p className="text-warm-cream/80">Thank you for booking a table. We will contact you shortly to confirm your reservation.</p>
                   </motion.div>
                 )}
               </AnimatePresence>
@@ -150,21 +150,21 @@ const AppointmentForm = () => {
                 <div>
                   <select 
                     className={`${inputClasses} appearance-none`}
-                    {...register("treatment", { required: true })}
+                    {...register("guests", { required: true })}
                   >
-                    <option value="" className="text-gray-900">Select Treatment</option>
-                    <option value="checkup" className="text-gray-900">Dental Checkup</option>
-                    <option value="whitening" className="text-gray-900">Teeth Whitening</option>
-                    <option value="implants" className="text-gray-900">Dental Implants</option>
-                    <option value="braces" className="text-gray-900">Braces / Orthodontics</option>
-                    <option value="other" className="text-gray-900">Other / Consultation</option>
+                    <option value="" className="text-gray-900">Number of Guests</option>
+                    <option value="1" className="text-gray-900">1 Person</option>
+                    <option value="2" className="text-gray-900">2 People</option>
+                    <option value="3" className="text-gray-900">3 People</option>
+                    <option value="4" className="text-gray-900">4 People</option>
+                    <option value="5+" className="text-gray-900">5+ People</option>
                   </select>
-                  {errors.treatment && <span className="text-red-400 text-xs mt-1 block">Treatment selection is required</span>}
+                  {errors.guests && <span className="text-red-400 text-xs mt-1 block">Guest count is required</span>}
                 </div>
 
                 <div>
                   <textarea 
-                    placeholder="Message or specific requests (Optional)" 
+                    placeholder="Special requests (e.g., high chair, window seat) (Optional)" 
                     rows={4}
                     className={`${inputClasses} resize-none`}
                     {...register("message")}
@@ -180,7 +180,7 @@ const AppointmentForm = () => {
                       </svg>
                       Processing...
                     </span>
-                  ) : "Confirm Appointment"}
+                  ) : "Confirm Reservation"}
                 </GlowButton>
               </form>
             </GlassCard>
@@ -191,4 +191,4 @@ const AppointmentForm = () => {
   );
 };
 
-export default AppointmentForm;
+export default ReservationForm;

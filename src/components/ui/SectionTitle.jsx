@@ -7,7 +7,7 @@ const SectionTitle = ({ subtitle, title, description, align = "center" }) => {
         initial={{ opacity: 0, y: 10 }}
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
-        className="text-cyan font-medium tracking-wider uppercase text-sm mb-3 block"
+        className="text-amber-glow font-medium tracking-wider uppercase text-sm mb-3 block font-serif"
       >
         {subtitle}
       </motion.span>
@@ -16,7 +16,7 @@ const SectionTitle = ({ subtitle, title, description, align = "center" }) => {
         whileInView={{ opacity: 1, y: 0 }}
         viewport={{ once: true }}
         transition={{ delay: 0.1 }}
-        className="text-3xl md:text-5xl font-bold mb-6 text-gradient inline-block"
+        className="text-3xl md:text-5xl font-bold mb-6 text-gradient inline-block font-serif"
       >
         {title}
       </motion.h2>
@@ -26,7 +26,7 @@ const SectionTitle = ({ subtitle, title, description, align = "center" }) => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ delay: 0.2 }}
-          className={`text-gray-400 max-w-2xl text-lg ${align === 'center' ? 'mx-auto' : ''}`}
+          className={`text-warm-cream/70 max-w-2xl text-lg ${align === 'center' ? 'mx-auto' : ''}`}
         >
           {description}
         </motion.p>

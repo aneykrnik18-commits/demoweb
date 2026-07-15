@@ -13,28 +13,28 @@ const testimonials = [
   {
     id: 1,
     name: 'Michael Thompson',
-    review: 'The best dental experience I have ever had. The staff is incredibly professional, and the clinic feels more like a luxury spa than a dentist office.',
+    review: 'The best coffee I have ever had. The staff is incredibly welcoming, and the cafe feels like a cozy second home.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 2,
     name: 'Sarah Williams',
-    review: 'Dr. Jenkins completely transformed my smile with veneers. The process was painless, and the results are absolutely stunning. Highly recommend!',
+    review: 'Their artisan pastries are out of this world! The almond croissant with an espresso is my absolute favorite morning treat.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1494790108377-be9c29b29330?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 3,
     name: 'David Chen',
-    review: 'I had severe dental anxiety, but the team here made me feel completely at ease. State-of-the-art equipment and a very gentle approach.',
+    review: 'I love coming here to work. The Wi-Fi is fast, the ambiance is perfectly chill, and the Matcha Latte keeps me going all day.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
   },
   {
     id: 4,
     name: 'Emily Rodriguez',
-    review: 'My kids actually look forward to going to the dentist now. The environment is so calming and the doctors are fantastic with children.',
+    review: 'A hidden gem in the city! The Healthy Bowls are delicious and so fresh. It is my go-to spot for weekend brunch with friends.',
     rating: 5,
     avatar: 'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-4.0.3&auto=format&fit=crop&w=150&q=80'
   }
@@ -43,12 +43,12 @@ const testimonials = [
 const Testimonials = () => {
   return (
     <section className="py-24 relative overflow-hidden">
-      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-cyan/5 blur-[120px] rounded-full pointer-events-none" />
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[800px] h-[400px] bg-amber-glow/5 blur-[120px] rounded-full pointer-events-none" />
 
       <div className="container mx-auto px-4 md:px-8 relative z-10">
         <SectionTitle 
-          subtitle="Success Stories" 
-          title="What Our Patients Say" 
+          subtitle="Happy Guests" 
+          title="What People Say" 
         />
 
         <div className="mt-12">
@@ -80,9 +80,9 @@ const Testimonials = () => {
                       <img 
                         src={testimonial.avatar} 
                         alt={testimonial.name} 
-                        className="w-20 h-20 rounded-full border-4 border-deep-navy object-cover"
+                        className="w-20 h-20 rounded-full border-4 border-dark-roast object-cover"
                       />
-                      <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-cyan flex items-center justify-center text-white">
+                      <div className="absolute -bottom-2 -right-2 w-8 h-8 rounded-full bg-amber-glow flex items-center justify-center text-white">
                         <Quote size={14} className="fill-current" />
                       </div>
                     </div>
@@ -90,12 +90,12 @@ const Testimonials = () => {
                   
                   <div className="flex justify-center gap-1 mb-6">
                     {[...Array(testimonial.rating)].map((_, i) => (
-                      <Star key={i} size={18} className="fill-yellow-400 text-yellow-400" />
+                      <Star key={i} size={18} className="fill-amber-400 text-amber-400" />
                     ))}
                   </div>
                   
-                  <p className="text-gray-300 italic mb-6">"{testimonial.review}"</p>
-                  <h4 className="text-white font-bold text-lg">{testimonial.name}</h4>
+                  <p className="text-warm-cream/80 italic mb-6">"{testimonial.review}"</p>
+                  <h4 className="text-white font-bold text-lg font-serif">{testimonial.name}</h4>
                 </GlassCard>
               </SwiperSlide>
             ))}

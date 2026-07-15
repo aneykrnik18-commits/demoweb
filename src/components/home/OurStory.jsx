@@ -3,15 +3,15 @@ import GlassCard from '../ui/GlassCard';
 import AnimatedCounter from '../ui/AnimatedCounter';
 import SectionTitle from '../ui/SectionTitle';
 
-const AboutDoctor = () => {
+const OurStory = () => {
   return (
     <section className="py-24 relative" id="about">
       <div className="container mx-auto px-4 md:px-8">
         
         <SectionTitle 
-          subtitle="Meet Your Doctor" 
-          title="Dr. Sarah Jenkins"
-          description="A renowned expert in cosmetic and restorative dentistry with a passion for creating beautiful, healthy smiles."
+          subtitle="Our Story" 
+          title="Welcome to The Cozy Bean"
+          description="A passionate corner of the city dedicated to brewing the perfect cup and baking artisan delights for our community."
         />
 
         <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -25,15 +25,15 @@ const AboutDoctor = () => {
             <GlassCard className="relative overflow-hidden p-2" hover={false}>
               <div className="aspect-[4/5] rounded-[20px] overflow-hidden relative bg-white/5">
                 <img 
-                  src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                  alt="Dr. Sarah Jenkins" 
+                  src="https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
+                  alt="Cafe Interior" 
                   className="w-full h-full object-cover"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-deep-navy via-transparent to-transparent opacity-80" />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-roast via-transparent to-transparent opacity-90" />
                 
                 <div className="absolute bottom-6 left-6 right-6">
-                  <h3 className="text-3xl font-bold text-white mb-2">Dr. Sarah Jenkins</h3>
-                  <p className="text-cyan font-medium">DDS, MS (Prosthodontics)</p>
+                  <h3 className="text-3xl font-bold text-white mb-2 font-serif">The Cozy Bean</h3>
+                  <p className="text-amber-glow font-medium">Est. 2018</p>
                 </div>
               </div>
             </GlassCard>
@@ -45,18 +45,18 @@ const AboutDoctor = () => {
             viewport={{ once: true, margin: "-100px" }}
             transition={{ duration: 0.8, delay: 0.2 }}
           >
-            <h3 className="text-2xl font-bold mb-6 text-white">Biography</h3>
-            <p className="text-gray-300 mb-6 leading-relaxed">
-              With over 15 years of experience in advanced dentistry, Dr. Jenkins has transformed thousands of smiles. She combines her artistic eye with the latest technological advancements to deliver exceptional, long-lasting results.
+            <h3 className="text-2xl font-bold mb-6 text-white font-serif">Our Passion</h3>
+            <p className="text-warm-cream/80 mb-6 leading-relaxed">
+              Founded on a deep love for coffee culture and culinary artistry, The Cozy Bean has grown into a beloved local sanctuary. We source our beans sustainably and bake our pastries fresh every morning to ensure the highest quality.
             </p>
-            <p className="text-gray-300 mb-10 leading-relaxed">
-              Her philosophy is centered around patient comfort and personalized care, ensuring that every visit is a stress-free and positive experience.
+            <p className="text-warm-cream/80 mb-10 leading-relaxed">
+              Our philosophy is simple: good food, great coffee, and a welcoming atmosphere where everyone feels at home. Whether you're here to work, relax, or catch up with friends, we've saved a seat for you.
             </p>
 
-            <h3 className="text-2xl font-bold mb-6 text-white">Expertise</h3>
+            <h3 className="text-2xl font-bold mb-6 text-white font-serif">What We Offer</h3>
             <div className="flex flex-wrap gap-3 mb-10">
-              {['Cosmetic Dentistry', 'Implantology', 'Smile Design', 'Orthodontics', 'Endodontics'].map((skill) => (
-                <span key={skill} className="px-4 py-2 rounded-full glass-panel text-sm text-cyan">
+              {['Signature Roasts', 'Artisan Pastries', 'Vegan Options', 'Free Wi-Fi', 'Cozy Ambiance'].map((skill) => (
+                <span key={skill} className="px-4 py-2 rounded-full glass-panel text-sm text-amber-glow">
                   {skill}
                 </span>
               ))}
@@ -65,27 +65,27 @@ const AboutDoctor = () => {
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="glass-panel p-4 text-center rounded-2xl">
                 <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={15} suffix="+" />
+                  <AnimatedCounter value={5} suffix="+" />
                 </div>
-                <p className="text-xs text-gray-400">Years Exp.</p>
+                <p className="text-xs text-warm-cream/60">Years Open</p>
               </div>
               <div className="glass-panel p-4 text-center rounded-2xl">
                 <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={12000} suffix="+" />
+                  <AnimatedCounter value={50000} suffix="+" />
                 </div>
-                <p className="text-xs text-gray-400">Patients</p>
+                <p className="text-xs text-warm-cream/60">Cups Served</p>
               </div>
               <div className="glass-panel p-4 text-center rounded-2xl">
                 <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={5000} suffix="+" />
+                  <AnimatedCounter value={20000} suffix="+" />
                 </div>
-                <p className="text-xs text-gray-400">Treatments</p>
+                <p className="text-xs text-warm-cream/60">Pastries Baked</p>
               </div>
               <div className="glass-panel p-4 text-center rounded-2xl">
                 <div className="text-2xl font-bold text-white mb-1">
-                  <AnimatedCounter value={98} suffix="%" />
+                  <AnimatedCounter value={99} suffix="%" />
                 </div>
-                <p className="text-xs text-gray-400">Satisfaction</p>
+                <p className="text-xs text-warm-cream/60">Happy Guests</p>
               </div>
             </div>
             
@@ -96,4 +96,4 @@ const AboutDoctor = () => {
   );
 };
 
-export default AboutDoctor;
+export default OurStory;

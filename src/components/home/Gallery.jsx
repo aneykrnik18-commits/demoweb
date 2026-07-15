@@ -4,12 +4,12 @@ import { X, ZoomIn } from 'lucide-react';
 import SectionTitle from '../ui/SectionTitle';
 
 const galleryImages = [
-  { id: 1, src: 'https://images.unsplash.com/photo-1606811841689-23dfddce3e95?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[4/3]' },
-  { id: 2, src: 'https://images.unsplash.com/photo-1588776814546-1ffcf47267a5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-square' },
-  { id: 3, src: 'https://images.unsplash.com/photo-1629909613654-28e377c37b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[3/4]' },
-  { id: 4, src: 'https://images.unsplash.com/photo-1598256989800-fea5ce5146f5?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[4/3]' },
-  { id: 5, src: 'https://images.unsplash.com/photo-1579684385127-1ef15d508118?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[3/4]' },
-  { id: 6, src: 'https://images.unsplash.com/photo-1609840114035-3c981b782dfe?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-square' },
+  { id: 1, src: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[4/3]' },
+  { id: 2, src: 'https://images.unsplash.com/photo-1554118811-1e0d58224f24?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-square' },
+  { id: 3, src: 'https://images.unsplash.com/photo-1495474472201-4475453000b0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[3/4]' },
+  { id: 4, src: 'https://images.unsplash.com/photo-1509042239860-f550ce710b93?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[4/3]' },
+  { id: 5, src: 'https://images.unsplash.com/photo-1525648199074-cee30ba79a4a?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-[3/4]' },
+  { id: 6, src: 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80', aspect: 'aspect-square' },
 ];
 
 const Gallery = () => {
@@ -19,9 +19,9 @@ const Gallery = () => {
     <section className="py-24 relative" id="gallery">
       <div className="container mx-auto px-4 md:px-8">
         <SectionTitle 
-          subtitle="Smile Gallery" 
-          title="Transformations" 
-          description="See the beautiful results we've achieved for our patients."
+          subtitle="Gallery" 
+          title="Moments Captured" 
+          description="Take a peek inside our cozy cafe, our artisan baked goods, and perfect pours."
         />
 
         <div className="columns-1 md:columns-2 lg:columns-3 gap-6 space-y-6 mt-12">
@@ -35,18 +35,18 @@ const Gallery = () => {
               className="break-inside-avoid"
             >
               <div 
-                className={`relative rounded-2xl overflow-hidden glass-panel group cursor-pointer border border-white/10 ${img.aspect}`}
+                className={`relative rounded-2xl overflow-hidden glass-panel group cursor-pointer border border-warm-cream/10 ${img.aspect}`}
                 onClick={() => setSelectedImage(img.src)}
               >
                 <img 
                   src={img.src} 
-                  alt="Gallery" 
+                  alt="Cafe Gallery" 
                   className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                   loading="lazy"
                 />
-                <div className="absolute inset-0 bg-cyan/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mix-blend-overlay" />
+                <div className="absolute inset-0 bg-dark-roast/80 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center mix-blend-overlay" />
                 <div className="absolute inset-0 flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity duration-300">
-                  <div className="w-12 h-12 rounded-full bg-white/20 backdrop-blur-md flex items-center justify-center text-white">
+                  <div className="w-12 h-12 rounded-full bg-warm-cream/20 backdrop-blur-md flex items-center justify-center text-white">
                     <ZoomIn size={24} />
                   </div>
                 </div>
@@ -63,11 +63,11 @@ const Gallery = () => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[100] bg-deep-navy/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
+            className="fixed inset-0 z-[100] bg-dark-roast/95 backdrop-blur-xl flex items-center justify-center p-4 md:p-10"
             onClick={() => setSelectedImage(null)}
           >
             <button 
-              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-white/10 flex items-center justify-center text-white hover:bg-white/20 transition-colors"
+              className="absolute top-6 right-6 w-12 h-12 rounded-full bg-warm-cream/10 flex items-center justify-center text-white hover:bg-warm-cream/20 transition-colors"
               onClick={() => setSelectedImage(null)}
             >
               <X size={24} />

@@ -6,8 +6,8 @@ import GlowButton from '../ui/GlowButton';
 
 const navLinks = [
   { name: 'Home', path: '/' },
-  { name: 'Services', path: '/services' },
-  { name: 'About', path: '/about' },
+  { name: 'Menu', path: '/menu' },
+  { name: 'Our Story', path: '/about' },
   { name: 'Gallery', path: '/gallery' },
   { name: 'Contact', path: '/contact' },
 ];
@@ -32,10 +32,10 @@ const Navbar = () => {
       }`}
     >
       <div className="container mx-auto px-4 md:px-8">
-        <div className={`glass-panel px-6 py-3 flex items-center justify-between rounded-full transition-all duration-300 ${isScrolled ? 'bg-white/10 shadow-glass' : 'bg-transparent border-transparent shadow-none'}`}>
+        <div className={`glass-panel px-6 py-3 flex items-center justify-between rounded-full transition-all duration-300 ${isScrolled ? 'bg-warm-cream/10 shadow-glass' : 'bg-transparent border-transparent shadow-none'}`}>
           
           <Link to="/" className="flex items-center gap-2">
-            <span className="text-2xl font-bold text-gradient">DentalClinic</span>
+            <span className="text-2xl font-bold text-gradient font-serif">The Cozy Bean</span>
           </Link>
 
           {/* Desktop Nav */}
@@ -44,13 +44,13 @@ const Navbar = () => {
               <Link 
                 key={link.name} 
                 to={link.path}
-                className="relative text-gray-300 hover:text-white transition-colors"
+                className="relative text-warm-cream/80 hover:text-white transition-colors"
               >
                 {link.name}
                 {location.pathname === link.path && (
                   <motion.div 
                     layoutId="activeNav"
-                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-cyan rounded-full shadow-glow"
+                    className="absolute -bottom-2 left-0 right-0 h-0.5 bg-amber-glow rounded-full shadow-glow"
                   />
                 )}
               </Link>
@@ -59,7 +59,7 @@ const Navbar = () => {
 
           <div className="hidden md:block">
             <Link to="/contact">
-               <GlowButton>Book Appointment</GlowButton>
+               <GlowButton>Reserve a Table</GlowButton>
             </Link>
           </div>
 
@@ -86,14 +86,14 @@ const Navbar = () => {
               <Link 
                 key={link.name} 
                 to={link.path}
-                className={`text-lg p-2 rounded-lg ${location.pathname === link.path ? 'bg-white/10 text-cyan' : 'text-gray-300'}`}
+                className={`text-lg p-2 rounded-lg ${location.pathname === link.path ? 'bg-warm-cream/10 text-amber-glow' : 'text-warm-cream/80'}`}
                 onClick={() => setMobileMenuOpen(false)}
               >
                 {link.name}
               </Link>
             ))}
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)}>
-               <GlowButton className="w-full mt-4">Book Appointment</GlowButton>
+               <GlowButton className="w-full mt-4">Reserve a Table</GlowButton>
             </Link>
           </motion.div>
         )}
